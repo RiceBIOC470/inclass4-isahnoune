@@ -1,3 +1,5 @@
+%AW: looks good, see a couple of minor comments below. 0.94/1. 
+
 %Inclass assignment 4. Due at the start of class on 9/12/17
 
 %1. (a) Write code that makes a file with the words "Random numbers 1" on its
@@ -6,6 +8,8 @@
 %that reads only the first line of random numbers in the file and stores
 %them as numbers in an array. 
 
+%AW: this is very close to correct. however 'Random numbers 2' doesn't print on its own line. to get this to work, move the statement
+%     fprintf(fid, "\n"); to below the loop over k instead of above it. -0.05
 %a
 filename = 'InClass4Question1.txt';
 fid = fopen(filename, 'w');
@@ -35,6 +39,9 @@ end
 % variable which is true if the sum of the numbers in the array is greater
 % than or equal to 10 and false if it is less than 10. 
 
+%AW: this is essentially correct, be careful with the variable types. By default value 
+% will store a number as 0 or 1, not a logical variable. use the keywords true or false
+% or else explicitly cast these as logical. -0.01.
 function value = Practice(matrixcheck)
 temp = sum(matrixcheck);
 if temp < 10
